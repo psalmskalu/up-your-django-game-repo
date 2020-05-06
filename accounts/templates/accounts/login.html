@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+<!-- define title for this page-->
+{% block title %} Login {% endblock %}
+
+<!-- start contents -->
+{% block content %}
+
+<div>
+ 
+    <h2> Registered User Login </h2>
+    
+    <form action = "" method = "post">
+        {% csrf_token %}
+
+        <div class = "form-group">
+            {{ form.username }}
+        </div>
+        
+        <br>
+        
+        <div class = "form-group">
+            {{ form.password}}
+        </div>
+
+        <br>
+
+        <button type = "submit" class = "btn btn-primary"> Login </button>
+
+    </form>
+  
+  <hr>
+  New to system? <a href = "{% url 'accounts:signup' %}"> Signup here </a>
+</div>
+
+{% endblock %}

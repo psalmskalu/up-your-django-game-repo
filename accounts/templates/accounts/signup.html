@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+<!-- define title for this page-->
+{% block title %} Register {% endblock %}
+
+<!-- start contents -->
+{% block content %}
+
+<div>
+ 
+    <h2> New User Registration </h2>
+    
+    <form action = "" method = "post">
+        {% csrf_token %}
+
+        <div class = "form-group">
+            {{ form.first_name }}
+        </div>
+        
+        <br>
+        
+        <div class = "form-group">
+            {{ form.last_name}}
+        </div>
+
+        <br>
+
+        <div class = "form-group">
+            {{ form.email}}
+        </div>
+
+        <br>
+
+        <div class = "form-group">
+            {{ form.username}}
+        </div>
+
+        <br>
+
+        <div class = "form-group">
+            {{ form.password}}
+        </div>
+
+        <br>
+
+        <div class = "form-group">
+            {{ form.password2}}
+        </div>
+
+        <br>
+
+        <button type = "submit" class = "btn btn-primary"> Signup </button>
+
+    </form>
+  
+
+</div>
+
+{% endblock %}
