@@ -1,0 +1,19 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+
+
+{% block title %} {{ user.first_name }} {% endblock %}
+
+
+{% block activeuser %} {{ user.first_name }} {% endblock %}
+
+{% block boldpagetitle %} {{ expense }} {% endblock %}
+
+{% block pagetitle %} {{ expense }} {% endblock %}
+
+
+{% block content %}
+
+  {{ expense }}
+
+{% endblock %}

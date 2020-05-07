@@ -96,19 +96,19 @@
                                 aria-hidden="true"></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="profile.html" class="waves-effect"><i class="fa fa-user fa-fw"
+                        <a href="{% url 'customers:view' %}" class="waves-effect"><i class="fa fa-user fa-fw"
                                 aria-hidden="true"></i>Customers</a>
                     </li>
                     <li>
-                        <a href="basic-table.html" class="waves-effect"><i class="fa fa-cutlery fa-fw"
+                        <a href="{% url 'drugs:view' %}" class="waves-effect"><i class="fa fa-cutlery fa-fw"
                                 aria-hidden="true"></i>Drugs</a>
                     </li>
                     <li>
-                        <a href="fontawesome.html" class="waves-effect"><i class="fa fa-shopping-cart fa-fw"
+                        <a href= "{% url 'sales:view' %}" class="waves-effect"><i class="fa fa-shopping-cart fa-fw"
                                 aria-hidden="true"></i>Sales</a>
                     </li>
                     <li>
-                        <a href="map-google.html" class="waves-effect"><i class="fa fa-money fa-fw"
+                        <a href="{% url 'expenses:view' %}" class="waves-effect"><i class="fa fa-money fa-fw"
                                 aria-hidden="true"></i>Expenses</a>
                     </li>
                     

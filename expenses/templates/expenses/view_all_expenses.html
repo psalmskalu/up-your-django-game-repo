@@ -1,0 +1,23 @@
+{% extends 'dashboard_base.html' %}
+{% load static %}
+
+
+{% block title %} {{ user.first_name }} {% endblock %}
+
+
+{% block activeuser %} {{ user.first_name }} {% endblock %}
+
+{% block boldpagetitle %} View All Expenses {% endblock %}
+
+{% block pagetitle %} View All Expenses {% endblock %}
+
+
+{% block content %}
+
+  {% for expense in expenses %}
+    
+    {{ expense }}
+
+  {% endfor %}
+
+{% endblock %}
