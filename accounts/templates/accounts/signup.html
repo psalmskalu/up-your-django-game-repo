@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 <!-- define title for this page-->
 {% block title %} Register {% endblock %}
@@ -6,10 +7,15 @@
 <!-- start contents -->
 {% block content %}
 
-<div>
+<br>
+<div class = "text-center">
+    <img src = "{% static 'images/drug-store-icon.png' %}" width = "200px" alt = "Drug Store Manager">
+</div>
+
+<div class = "panel">
  
-    <h2> New User Registration </h2>
-    
+    <h2 class = "text-center"> New User Registration </h2>
+    <br>
     <form action = "" method = "post">
         {% csrf_token %}
 

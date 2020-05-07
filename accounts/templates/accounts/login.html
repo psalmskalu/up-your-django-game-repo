@@ -1,15 +1,23 @@
 {% extends 'base.html' %}
+{% load static %}
 
 <!-- define title for this page-->
 {% block title %} Login {% endblock %}
 
 <!-- start contents -->
 {% block content %}
+<br>
+<div class = "text-center">
+    <img src = "{% static 'images/drug-store-icon.png' %}" width = "200px" alt = "Drug Store Manager">
+    {% if message %}
+      <div class = "alert alert-danger"> {{ message }}</div>
 
-<div>
- 
-    <h2> Registered User Login </h2>
-    
+    {% endif %}
+</div>
+<div class = "panel">
+        
+    <h2 class = "text-center"> Registered User Login </h2>
+    <br>
     <form action = "" method = "post">
         {% csrf_token %}
 
