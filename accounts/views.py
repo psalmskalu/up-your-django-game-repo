@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import LoginForm, RegistrationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def user_login(request):
@@ -14,7 +15,10 @@ def user_login(request):
 
             if user is not None:
                 login(request, user)
-                return HttpResponse("Login successful")
+                context = {
+                    'user':user
+                }
+                return render(request, 'accounts/dashboard.html', context)
 
             else:
                 
@@ -85,3 +89,16 @@ def user_signup(request):
     form = RegistrationForm()
     context = {'form':form}
     return render(request, 'accounts/signup.html', context)
+
+@login_required
+def user_dashboard(request):
+    return render(request, 'accounts/dashboard.html', {'user': request.user})
+
+
+def user_signout(request):   
+
+    logout(request)
+    form = LoginForm()
+    
+    return render(request, 'accounts/login.html', {'form': form})
+
